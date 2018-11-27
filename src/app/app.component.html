@@ -1,22 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<form>
-  <mat-form-field class="example-full-width">
-    <input #cardInput matInput placeholder="Create a card" (keyup.enter)="onEnter(cardInput.value)"/>
-  </mat-form-field>
-</form>
-<div class="container">
-
-  <div class="card-pool backlog">
-    <h2>Backlog</h2>
-    <app-card-item *ngFor="let card of backlogCards; let i=index" [card]="card" [index]="i">
-    </app-card-item>
-  </div>
-
-  <div class="card-pool active-sprint">
-    <h2>Active sprint</h2>
-    <app-card-item *ngFor="let card of activeCards" [card]="card" [index]="i">
-    </app-card-item>
-  </div>
-
+<div>
+  <app-backlog-cards></app-backlog-cards>
+  <app-active-cards></app-active-cards>
 </div>
