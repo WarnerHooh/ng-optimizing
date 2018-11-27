@@ -15,16 +15,14 @@ import {
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CardItemComponent } from './card-item/card-item.component';
-import { BacklogCardsComponent } from './backlog-cards/backlog-cards.component';
-import { ActiveCardsComponent } from './active-cards/active-cards.component';
+import { CardsListComponent } from './cards-list/cards-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     CardItemComponent,
-    BacklogCardsComponent,
-    ActiveCardsComponent
+    CardsListComponent
   ],
   imports: [
     BrowserModule,

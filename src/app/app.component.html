@@ -1,6 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div>
-  <app-backlog-cards></app-backlog-cards>
-  <app-active-cards></app-active-cards>
+  <app-cards-list
+    type="active"
+    [cards]="activeCards"
+    (careate)="onCreateActiveCard($event)">
+  </app-cards-list>
+  <app-cards-list
+    type="backlog"
+    [cards]="backlogCards"
+    (careate)="onCreateBacklogCard($event)">
+  </app-cards-list>
 </div>
