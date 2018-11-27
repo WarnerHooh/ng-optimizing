@@ -10,7 +10,7 @@ import {
   MatSidenavModule,
   MatIconModule,
   MatListModule,
-  MatChipsModule
+  MatChipsModule, MatInputModule
 } from '@angular/material';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -26,7 +26,7 @@ import { CardItemComponent } from './card-item/card-item.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,
-    MatChipsModule,
+    MatChipsModule, MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

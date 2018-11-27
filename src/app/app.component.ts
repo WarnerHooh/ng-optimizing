@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-sample';
+  @ViewChild('cardInput') cardInput: ElementRef;
 
   activeCards = Array.from({
-    length: 200
-  }).map((it, i) => `active - ${i}`);
+    length: 100
+  }).map((it, i) => `active - ${i + 1}`);
 
   backlogCards = Array.from({
-    length: 200
-  }).map((it, i) => `backlog - ${i}`);
+    length: 100
+  }).map((it, i) => `backlog - ${i + 1}`);
+
+  onEnter(cardTitle: string) {
+    console.log(cardTitle);
+    this.cardInput.nativeElement.value = '';
+
+    this.backlogCards.unshift(cardTitle);
+  }
 }
