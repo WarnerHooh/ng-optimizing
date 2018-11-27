@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+export interface Card {
+  title: string;
+  point: number;
+}
+
 @Component({
   selector: 'app-card-item',
   templateUrl: './card-item.component.html',
@@ -7,8 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardItemComponent implements OnInit {
 
-  @Input() card: string;
-  @Input() index: number;
+  @Input() card: Card;
 
   constructor() { }
 

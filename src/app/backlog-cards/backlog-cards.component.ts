@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Card } from '../card-item/card-item.component';
 
 @Component({
   selector: 'app-backlog-cards',
@@ -6,22 +7,29 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./backlog-cards.component.scss']
 })
 export class BacklogCardsComponent implements OnInit {
-  cards = Array.from({
+  cards: Card[] = Array.from({
     length: 100
-  }).map((it, i) => `backlog - ${i + 1}`);
+  }).map((it, i) => ({
+    title: `backlog - ${i + 1}`,
+    point: 20 + i % 3
+  }));
 
   @ViewChild('cardInput') cardInput: ElementRef;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  onEnter(cardTitle: string) {
-    console.log(cardTitle);
+  onEnter(title: string) {
+    console.log(title);
     this.cardInput.nativeElement.value = '';
 
-    this.cards.unshift(cardTitle);
+    this.cards.unshift({
+      title,
+      point: 20 + this.cards.length % 3
+    });
   }
 
 }
