@@ -1,16 +1,27 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import { Card } from '../card-item/card-item.component';
 
 @Component({
   selector: 'app-cards-list',
   templateUrl: './cards-list.component.html',
-  styleUrls: ['./cards-list.component.scss']
+  styleUrls: ['./cards-list.component.scss'],
 })
-export class CardsListComponent implements OnInit {
+export class CardsListComponent implements OnInit, OnChanges {
 
   @Input() cards: Card[];
   @Input() type: string;
-  @Output('careate') careate = new EventEmitter<Card>();
+  @Output('create') create = new EventEmitter<Card>();
 
   @ViewChild('cardInput') cardInput: ElementRef;
 
@@ -24,10 +35,14 @@ export class CardsListComponent implements OnInit {
     console.log(title);
     this.cardInput.nativeElement.value = '';
 
-    this.careate.emit({
+    this.create.emit({
       title,
       point: 20 + this.cards.length % 3
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
 
 }
