@@ -17,6 +17,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CardItemComponent } from './card-item/card-item.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
 import { CardsService } from './cards-service/cards.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CardsService } from './cards-service/cards.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatButtonModule, MatCheckboxModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,
     MatChipsModule, MatInputModule
   ],

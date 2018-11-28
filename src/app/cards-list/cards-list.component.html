@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <mat-form-field class="example-full-width">
-  <input matInput placeholder="Create a card" (keyup.enter)="onEnter($event)"/>
+  <input matInput placeholder="Create a card" [(ngModel)]="title" (keyup.enter)="onEnter()" />
 </mat-form-field>
 
 <div class="container">

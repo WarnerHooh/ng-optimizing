@@ -1,15 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-  ViewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Card } from '../card-item/card-item.component';
 
 @Component({
@@ -19,6 +8,7 @@ import { Card } from '../card-item/card-item.component';
 })
 export class CardsListComponent implements OnInit {
 
+  title: string;
   @Input() cards: Card[];
   @Input() type: string;
   @Output('create') create = new EventEmitter<string>();
@@ -29,10 +19,9 @@ export class CardsListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onEnter(event) {
-    const title = event.target.value;
-    event.target.value = '';
-    this.create.emit(title);
+  onEnter() {
+    this.create.emit(this.title);
+    this.title = '';
   }
 
 }
