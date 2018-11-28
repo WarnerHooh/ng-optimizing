@@ -30,7 +30,7 @@ export class CardsListComponent implements OnInit, OnChanges {
   }
 
   onEnter(event) {
-    const title = event.target.value
+    const title = event.target.value;
     event.target.value = '';
     this.create.emit(title);
   }
