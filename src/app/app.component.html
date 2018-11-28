@@ -4,11 +4,11 @@
   <app-cards-list
     type="active"
     [cards]="activeCards"
-    (create)="onCreateActiveCard($event)">
+    (create)="activeCards = onCreateCard($event, activeCards)">
   </app-cards-list>
   <app-cards-list
     type="backlog"
     [cards]="backlogCards"
-    (create)="onCreateBacklogCard($event)">
+    (create)="backlogCards = onCreateCard($event, backlogCards)">
   </app-cards-list>
 </div>

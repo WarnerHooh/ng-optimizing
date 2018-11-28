@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Card } from '../card-item/card-item.component';
+import { List } from 'immutable';
 
 @Component({
   selector: 'app-cards-list',
@@ -9,7 +10,7 @@ import { Card } from '../card-item/card-item.component';
 export class CardsListComponent implements OnInit {
 
   title: string;
-  @Input() cards: Card[];
+  @Input() cards: List<Card>;
   @Input() type: string;
   @Output('create') create = new EventEmitter<string>();
 

@@ -1,29 +1,27 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Card } from './card-item/card-item.component';
 import { CardsService } from './cards-service/cards.service';
+import { List } from 'immutable';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
 
   constructor(private cardsService: CardsService) {
   }
 
-  activeCards: Card[] = this.cardsService.getActiveCards();
+  activeCards: List<Card> = List(this.cardsService.getActiveCards());
 
-  backlogCards: Card[] = this.cardsService.getBacklogCards();
+  backlogCards: List<Card> = List(this.cardsService.getBacklogCards());
 
-  onCreateActiveCard(title) {
-    this.activeCards.unshift({
+  onCreateCard(title: string, cards: List<Card>) {
+    return cards.unshift({
       title,
       point: this.cardsService.generatePoint()
     });
-  }
-
-  onCreateBacklogCard(card) {
-    this.backlogCards.unshift(card);
   }
 }
