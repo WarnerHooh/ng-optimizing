@@ -20,6 +20,7 @@ import { CardsService } from './cards-service/cards.service';
 import { FormsModule } from '@angular/forms';
 import { CardInputComponent } from './cards-list/card-input/card-input.component';
 import { ListComponent } from './cards-list/list/list.component';
+import { FibonacciPipe } from './pipe/fibonacci.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListComponent } from './cards-list/list/list.component';
     CardItemComponent,
     CardsListComponent,
     CardInputComponent,
-    ListComponent
+    ListComponent,
+    FibonacciPipe
   ],
   imports: [
     BrowserModule,

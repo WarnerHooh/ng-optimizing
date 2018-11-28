@@ -1,6 +1,6 @@
 <div class="card">
   <span>{{card.title}}</span>
   <mat-chip-list>
-    <mat-chip color="primary" selected>{{calculate()}}</mat-chip>
+    <mat-chip color="primary" selected>{{card.point | fibonacci}}</mat-chip>
   </mat-chip-list>
 </div>

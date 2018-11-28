@@ -5,13 +5,6 @@ export interface Card {
   point: number;
 }
 
-const fibonacci = (num) => {
-  if (num === 1 || num === 2) {
-    return 1;
-  }
-  return fibonacci(num - 1) + fibonacci(num - 2);
-};
-
 @Component({
   selector: 'app-card-item',
   templateUrl: './card-item.component.html',
@@ -25,10 +18,4 @@ export class CardItemComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  calculate() {
-    console.log('calculating');
-    return fibonacci(this.card.point);
-  }
-
 }
