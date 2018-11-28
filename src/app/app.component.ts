@@ -12,19 +12,9 @@ export class AppComponent {
   constructor(private cardsService: CardsService) {
   }
 
-  activeCards: Card[] = Array.from({
-    length: 50
-  }).map((it, i) => ({
-    title: `card active - ${i + 1}`,
-    point: this.cardsService.generatePoint()
-  }));
+  activeCards: Card[] = this.cardsService.getActiveCards();
 
-  backlogCards: Card[] = Array.from({
-    length: 50
-  }).map((it, i) => ({
-    title: `card backlog - ${i + 1}`,
-    point: this.cardsService.generatePoint()
-  }));
+  backlogCards: Card[] = this.cardsService.getBacklogCards();
 
   onCreateActiveCard(title) {
     this.activeCards.unshift({
