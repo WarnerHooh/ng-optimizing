@@ -17,7 +17,7 @@ import { Card } from '../card-item/card-item.component';
   templateUrl: './cards-list.component.html',
   styleUrls: ['./cards-list.component.scss'],
 })
-export class CardsListComponent implements OnInit, OnChanges {
+export class CardsListComponent implements OnInit {
 
   @Input() cards: Card[];
   @Input() type: string;
@@ -33,10 +33,6 @@ export class CardsListComponent implements OnInit, OnChanges {
     const title = event.target.value;
     event.target.value = '';
     this.create.emit(title);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
   }
 
 }

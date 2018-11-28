@@ -13,16 +13,16 @@ export class AppComponent {
   }
 
   activeCards: Card[] = Array.from({
-    length: 100
+    length: 50
   }).map((it, i) => ({
-    title: `active - ${i + 1}`,
+    title: `card active - ${i + 1}`,
     point: this.cardsService.generatePoint()
   }));
 
   backlogCards: Card[] = Array.from({
-    length: 100
+    length: 50
   }).map((it, i) => ({
-    title: `backlog - ${i + 1}`,
+    title: `card backlog - ${i + 1}`,
     point: this.cardsService.generatePoint()
   }));
 
