@@ -21,9 +21,7 @@ export class CardsListComponent implements OnInit, OnChanges {
 
   @Input() cards: Card[];
   @Input() type: string;
-  @Output('create') create = new EventEmitter<Card>();
-
-  @ViewChild('cardInput') cardInput: ElementRef;
+  @Output('create') create = new EventEmitter<string>();
 
   constructor() {
   }
@@ -31,14 +29,10 @@ export class CardsListComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
 
-  onEnter(title: string) {
-    console.log(title);
-    this.cardInput.nativeElement.value = '';
-
-    this.create.emit({
-      title,
-      point: 20 + this.cards.length % 3
-    });
+  onEnter(event) {
+    const title = event.target.value
+    event.target.value = '';
+    this.create.emit(title);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

@@ -1,10 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<form>
-  <mat-form-field class="example-full-width">
-    <input #cardInput matInput placeholder="Create a card" (keyup.enter)="onEnter(cardInput.value)"/>
-  </mat-form-field>
-</form>
+<mat-form-field class="example-full-width">
+  <input #cardInput matInput placeholder="Create a card" (keyup.enter)="onEnter($event)"/>
+</mat-form-field>
 
 <div class="container">
   <div class="card-pool backlog">

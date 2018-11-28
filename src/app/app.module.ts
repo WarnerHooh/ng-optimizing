@@ -16,6 +16,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CardItemComponent } from './card-item/card-item.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
+import { CardsService } from './cards-service/cards.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { CardsListComponent } from './cards-list/cards-list.component';
     MatButtonModule, MatCheckboxModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,
     MatChipsModule, MatInputModule
   ],
-  providers: [],
+  providers: [CardsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Card } from './card-item/card-item.component';
+import { CardsService } from './cards-service/cards.service';
 
 @Component({
   selector: 'app-root',
@@ -7,22 +8,29 @@ import { Card } from './card-item/card-item.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(private cardsService: CardsService) {
+  }
+
   activeCards: Card[] = Array.from({
     length: 100
   }).map((it, i) => ({
     title: `active - ${i + 1}`,
-    point: 20 + i % 3
+    point: this.cardsService.generatePoint()
   }));
 
   backlogCards: Card[] = Array.from({
     length: 100
   }).map((it, i) => ({
     title: `backlog - ${i + 1}`,
-    point: 20 + i % 3
+    point: this.cardsService.generatePoint()
   }));
 
-  onCreateActiveCard(card) {
-    this.activeCards.unshift(card);
+  onCreateActiveCard(title) {
+    this.activeCards.unshift({
+      title,
+      point: this.cardsService.generatePoint()
+    });
   }
 
   onCreateBacklogCard(card) {

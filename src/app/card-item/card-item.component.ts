@@ -21,7 +21,7 @@ export class CardItemComponent implements OnInit {
 
   fibonacci() {
     console.log('fibonacci');
-    return 'fibonacci';
+    return `fibonacci(${this.card.point})`;
   }
 
 }
