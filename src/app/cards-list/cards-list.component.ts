@@ -9,7 +9,6 @@ import { List } from 'immutable';
 })
 export class CardsListComponent implements OnInit {
 
-  title: string;
   @Input() cards: List<Card>;
   @Input() type: string;
   @Output('create') create = new EventEmitter<string>();
@@ -18,11 +17,6 @@ export class CardsListComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  onEnter() {
-    this.create.emit(this.title);
-    this.title = '';
   }
 
 }

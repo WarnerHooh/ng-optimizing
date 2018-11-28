@@ -18,13 +18,17 @@ import { CardItemComponent } from './card-item/card-item.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
 import { CardsService } from './cards-service/cards.service';
 import { FormsModule } from '@angular/forms';
+import { CardInputComponent } from './cards-list/card-input/card-input.component';
+import { ListComponent } from './cards-list/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     CardItemComponent,
-    CardsListComponent
+    CardsListComponent,
+    CardInputComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

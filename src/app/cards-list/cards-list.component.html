@@ -1,13 +1,3 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
-<mat-form-field class="example-full-width">
-  <input matInput placeholder="Create a card" [(ngModel)]="title" (keyup.enter)="onEnter()" />
-</mat-form-field>
-
-<div class="container">
-  <div class="card-pool backlog">
-    <h2>{{type}} cards</h2>
-    <app-card-item *ngFor="let card of cards" [card]="card">
-    </app-card-item>
-  </div>
-</div>
+<app-card-input (create)="create.emit($event)"></app-card-input>
+<app-list [cards]="cards" [type]="type"></app-list>

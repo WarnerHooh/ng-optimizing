@@ -10,7 +10,7 @@ const fibonacci = (num) => {
     return 1;
   }
   return fibonacci(num - 1) + fibonacci(num - 2);
-}
+};
 
 @Component({
   selector: 'app-card-item',
@@ -27,6 +27,7 @@ export class CardItemComponent implements OnInit {
   }
 
   calculate() {
+    console.log('calculating');
     return fibonacci(this.card.point);
   }
 
